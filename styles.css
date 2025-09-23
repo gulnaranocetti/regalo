@@ -59,7 +59,7 @@ h1{
 }
 
 .regalo.abierto .box[data-index="0"] .lid img {
-  transform:translateY(20%) translateX(80%);
+  transform:translateY(20%) translateX(65%);
 }
 
 .regalo.abierto .box[data-index="1"] .lid img {
@@ -71,7 +71,7 @@ h1{
 }
 
 .regalo.abierto .box[data-index="0"] .premio{
-  top:13.5rem; left:13rem;
+  top:13.5rem; left:7rem;
 }
 
 .regalo.abierto .box[data-index="1"] .premio{
