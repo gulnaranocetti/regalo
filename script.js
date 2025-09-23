@@ -45,3 +45,4 @@ premios.forEach((texto, idx) => {
     if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openGift(); }
   });
 });
+

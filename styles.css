@@ -42,7 +42,6 @@ h1{
 .premio{
     display:none; 
     position:absolute; 
-    top:13.5rem; left:-1rem;
     color:rgb(148, 13, 13);
     font-size: x-large;
     font-family: 'Pacifico', cursive;
@@ -54,10 +53,35 @@ h1{
 
 /* estado abierto: trayéndolo al frente, tapa abierta y premio visible */
 /* .regalo.abierto{ transform:translateY(8rem) scale(1.06); z-index:1000; } */
-.regalo.abierto .lid{width: 150%; transform:translateY(20%) translateX(20%);}
+.regalo.abierto .lid{width: 150%;}
 .regalo.abierto .lid img {
   content: url("img/regaloAbierto.png");
 }
+
+.regalo.abierto .box[data-index="0"] .lid img {
+  transform:translateY(20%) translateX(80%);
+}
+
+.regalo.abierto .box[data-index="1"] .lid img {
+  transform:translateY(20%) translateX(-20%);
+}
+
+.regalo.abierto .box[data-index="2"] .lid img {
+  transform:translateY(20%) translateX(-80%);
+}
+
+.regalo.abierto .box[data-index="0"] .premio{
+  top:13.5rem; left:5rem;
+}
+
+.regalo.abierto .box[data-index="1"] .premio{
+  top:13.5rem; left:-7rem;
+}
+
+.regalo.abierto .box[data-index="2"] .premio{
+  top:13.5rem; left:-15rem;
+}
+
 .regalo.abierto .premio{ display:block; } 
 
 .modo-foco .regalo:not(.abierto) {
