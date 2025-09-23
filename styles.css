@@ -1,0 +1,78 @@
+:root{
+    --w:150px;
+    --h:120px;
+}
+*{box-sizing:border-box}
+body{
+    font-family:system-ui,Arial; text-align:center; padding:32px;
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAECC6, #2BC0E4); 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 10rem;
+    color: brown;
+}
+.regalos{display:flex;gap:28px;justify-content:center;align-items:flex-end}
+
+/* contenedor del regalo */
+.regalo{
+    position:relative;
+    perspective:100%;
+    cursor:pointer; 
+    transition:transform .28s;
+}
+
+
+/* caja interna para 3D */
+.box{ width:var(--w); height:var(--h); position:relative}
+
+.lid{
+    position:absolute; top:-4rem; left:0; width:var(--w); transform-origin:top center;
+    transition:transform .6s cubic-bezier(.2,.8,.2,1), box-shadow .2s;
+    pointer-events:none;
+}
+.lid img{ width: 100%; height:100%; object-fit:cover; display:block}
+
+/* premio oculto */
+.premio{
+    display:none; 
+    position:absolute; 
+    top:13.5rem; left:-1rem;
+    color:rgb(148, 13, 13);
+    font-size: x-large;
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    white-space:nowrap;
+    animation: fadeIn;
+    animation-duration: 5s;
+}
+
+/* estado abierto: trayéndolo al frente, tapa abierta y premio visible */
+/* .regalo.abierto{ transform:translateY(8rem) scale(1.06); z-index:1000; } */
+.regalo.abierto .lid{width: 150%; transform:translateY(20%) translateX(20%);}
+.regalo.abierto .lid img {
+  content: url("img/regaloAbierto.png");
+}
+.regalo.abierto .premio{ display:block; } 
+
+.modo-foco .regalo:not(.abierto) {
+  opacity: 0.3;
+  filter: blur(2px);
+  pointer-events: none; /* evita que se puedan clicar */
+  transition: all 0.3s ease;
+}
+
+.regalo.abierto {
+  opacity: 1;
+  filter: none;
+  pointer-events: auto;
+}
+
+/* hover ligero */
+.regalo:hover{ transform:translateY(-6px); }
+
