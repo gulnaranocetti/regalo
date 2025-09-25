@@ -5,9 +5,10 @@
 *{box-sizing:border-box}
 body{
     font-family:system-ui,Arial; text-align:center; padding:32px;
-    background: #2BC0E4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #EAECC6, #2BC0E4);
+background: #FEAC5E;
+background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
+
     margin: 0;
     overflow-x: hidden;
 }
@@ -48,11 +49,11 @@ h1{
   color:rgb(148, 13, 13);
   font-size: x-large;
   font-family: 'Pacifico', cursive;
-    font-weight: bold;
-    white-space:nowrap;
-    animation: fadeIn;
-    animation-duration: 5s;
-  }
+  font-weight: bold;
+  white-space:nowrap;
+  animation: jackInTheBox;
+  animation-duration: 3s;
+}
 
   /* estado abierto: trayéndolo al frente, tapa abierta y premio visible */
 /* .regalo.abierto{ transform:translateY(8rem) scale(1.06); z-index:1000; } */
@@ -100,6 +101,11 @@ h1{
   pointer-events: auto;
 }
 
+.regalo.abierto h1 {
+  animation: bounce;
+  animation-duration: 2s;
+}
+
 /* hover ligero */
 .regalo:hover{ transform:translateY(-6px); }
 
@@ -121,7 +127,7 @@ h1{
   }
 
   .premio{
-    font-size: medium;
+    font-size: large;
   }
 
   .regalo.abierto .lid{width: 200%;}
@@ -139,14 +145,14 @@ h1{
   }
 
   .regalo.abierto .box[data-index="0"] .premio{
-    top:6rem; left:4rem;
+    top:6rem; left:1rem;
   }
 
   .regalo.abierto .box[data-index="1"] .premio{
-    top:6rem; left:-5rem;
+    top:6rem; left:-7rem;
   }
 
   .regalo.abierto .box[data-index="2"] .premio{
-    top:6rem; left:-13rem;
+    top:6rem; left:-15.5rem;
   }
 }
