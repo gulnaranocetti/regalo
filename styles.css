@@ -7,7 +7,9 @@ body{
     font-family:system-ui,Arial; text-align:center; padding:32px;
     background: #2BC0E4;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #EAECC6, #2BC0E4); 
+    background: linear-gradient(to right, #EAECC6, #2BC0E4);
+    margin: 0;
+    overflow-x: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
@@ -38,20 +40,21 @@ h1{
 }
 .lid img{ width: 100%; height:100%; object-fit:cover; display:block}
 
+
 /* premio oculto */
 .premio{
-    display:none; 
-    position:absolute; 
-    color:rgb(148, 13, 13);
-    font-size: x-large;
-    font-family: 'Pacifico', cursive;
+  display:none; 
+  position:absolute; 
+  color:rgb(148, 13, 13);
+  font-size: x-large;
+  font-family: 'Pacifico', cursive;
     font-weight: bold;
     white-space:nowrap;
     animation: fadeIn;
     animation-duration: 5s;
-}
+  }
 
-/* estado abierto: trayéndolo al frente, tapa abierta y premio visible */
+  /* estado abierto: trayéndolo al frente, tapa abierta y premio visible */
 /* .regalo.abierto{ transform:translateY(8rem) scale(1.06); z-index:1000; } */
 .regalo.abierto .lid{width: 150%;}
 .regalo.abierto .lid img {
@@ -67,11 +70,11 @@ h1{
 }
 
 .regalo.abierto .box[data-index="2"] .lid img {
-  transform:translateY(20%) translateX(-80%);
+  transform:translateY(20%) translateX(-100%);
 }
 
 .regalo.abierto .box[data-index="0"] .premio{
-  top:13.5rem; left:7rem;
+  top:13.5rem; left:5rem;
 }
 
 .regalo.abierto .box[data-index="1"] .premio{
@@ -79,7 +82,7 @@ h1{
 }
 
 .regalo.abierto .box[data-index="2"] .premio{
-  top:13.5rem; left:-15rem;
+  top:13.5rem; left:-18rem;
 }
 
 .regalo.abierto .premio{ display:block; } 
@@ -100,3 +103,50 @@ h1{
 /* hover ligero */
 .regalo:hover{ transform:translateY(-6px); }
 
+@media (max-width: 600px) {
+  .lid img {
+    max-width: 60%;
+    height: auto;
+  }
+
+  .box {
+    width: 100px;
+    height: 96px;
+  }
+
+  .conteiner {
+    width: 100%;
+    max-width: 370px;
+    margin: auto;
+  }
+
+  .premio{
+    font-size: medium;
+  }
+
+  .regalo.abierto .lid{width: 200%;}
+
+  .regalo.abierto .box[data-index="0"] .lid img {
+  transform:translateY(20%) translateX(100%);
+  }
+
+  .regalo.abierto .box[data-index="1"] .lid img {
+    transform:translateY(20%) translateX(-20%);
+  }
+
+  .regalo.abierto .box[data-index="2"] .lid img {
+    transform:translateY(20%) translateX(-120%);
+  }
+
+  .regalo.abierto .box[data-index="0"] .premio{
+    top:6rem; left:4rem;
+  }
+
+  .regalo.abierto .box[data-index="1"] .premio{
+    top:6rem; left:-5rem;
+  }
+
+  .regalo.abierto .box[data-index="2"] .premio{
+    top:6rem; left:-13rem;
+  }
+}
